@@ -24,12 +24,8 @@ typedef onLatestImageAvailable = void Function(CameraImage image);
 /// Completes with a list of available cameras.
 ///
 /// May throw a [CameraException].
-Future<List<CameraDescription>> availableCameras({
-  bool physicalCameras = true,
-  bool logicalCameras = false,
-}) async {
-  return CameraPlatform.instance.availableCameras(
-      logicalCameras: logicalCameras, physicalCameras: physicalCameras);
+Future<List<CameraDescription>> availableCameras() async {
+  return CameraPlatform.instance.availableCameras();
 }
 
 // TODO(stuartmorgan): Remove this once the package requires 2.10, where the
